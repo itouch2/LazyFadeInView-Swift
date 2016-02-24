@@ -13,6 +13,9 @@
 		CB3EFE791C5F632A009AB59D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3EFE781C5F632A009AB59D /* Assets.xcassets */; };
 		CB3EFE7C1C5F632A009AB59D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3EFE7A1C5F632A009AB59D /* LaunchScreen.storyboard */; };
 		CB3EFE871C5F632A009AB59D /* LazyFadeInView_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EFE861C5F632A009AB59D /* LazyFadeInView_SwiftTests.swift */; };
+		CB3EFE931C5F638F009AB59D /* LazyFadeInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EFE921C5F638F009AB59D /* LazyFadeInView.swift */; };
+		CB3EFE951C5F63E6009AB59D /* LazyFadeIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EFE941C5F63E6009AB59D /* LazyFadeIn.swift */; };
+		CB3EFEC91C5F648F009AB59D /* LazyFadeInLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3EFEC81C5F648F009AB59D /* LazyFadeInLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		CB3EFE821C5F632A009AB59D /* LazyFadeInView-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LazyFadeInView-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3EFE861C5F632A009AB59D /* LazyFadeInView_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyFadeInView_SwiftTests.swift; sourceTree = "<group>"; };
 		CB3EFE881C5F632A009AB59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB3EFE921C5F638F009AB59D /* LazyFadeInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyFadeInView.swift; sourceTree = "<group>"; };
+		CB3EFE941C5F63E6009AB59D /* LazyFadeIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyFadeIn.swift; sourceTree = "<group>"; };
+		CB3EFEC81C5F648F009AB59D /* LazyFadeInLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyFadeInLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		CB3EFE701C5F632A009AB59D /* LazyFadeInView-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				CB3EFE911C5F6380009AB59D /* LazyFadeInView */,
 				CB3EFE711C5F632A009AB59D /* AppDelegate.swift */,
 				CB3EFE731C5F632A009AB59D /* ViewController.swift */,
 				CB3EFE751C5F632A009AB59D /* Main.storyboard */,
@@ -94,6 +101,16 @@
 				CB3EFE881C5F632A009AB59D /* Info.plist */,
 			);
 			path = "LazyFadeInView-SwiftTests";
+			sourceTree = "<group>";
+		};
+		CB3EFE911C5F6380009AB59D /* LazyFadeInView */ = {
+			isa = PBXGroup;
+			children = (
+				CB3EFE941C5F63E6009AB59D /* LazyFadeIn.swift */,
+				CB3EFE921C5F638F009AB59D /* LazyFadeInView.swift */,
+				CB3EFEC81C5F648F009AB59D /* LazyFadeInLayer.swift */,
+			);
+			path = LazyFadeInView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3EFE931C5F638F009AB59D /* LazyFadeInView.swift in Sources */,
 				CB3EFE741C5F632A009AB59D /* ViewController.swift in Sources */,
+				CB3EFE951C5F63E6009AB59D /* LazyFadeIn.swift in Sources */,
 				CB3EFE721C5F632A009AB59D /* AppDelegate.swift in Sources */,
+				CB3EFEC91C5F648F009AB59D /* LazyFadeInLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +408,7 @@
 				CB3EFE8D1C5F632A009AB59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB3EFE8E1C5F632A009AB59D /* Build configuration list for PBXNativeTarget "LazyFadeInView-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +417,7 @@
 				CB3EFE901C5F632A009AB59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

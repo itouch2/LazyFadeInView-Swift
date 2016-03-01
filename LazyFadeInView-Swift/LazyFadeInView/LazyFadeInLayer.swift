@@ -12,13 +12,18 @@ class LazyFadeInLayer: CATextLayer, LazyFadeIn {
 
     override init() {
         super.init()
-        self.wrapped = true
-        self.fadeInNumberOfLayers = 6
-        self.fadeInTextFont = UIFont(name: "HelveticaNeue-Light", size: 18)!
+        self.commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init()
+        self.commonInit()
+    }
+    
+    func commonInit() -> Void {
+        self.wrapped = true
+        self.fadeInNumberOfLayers = 6
+        self.fadeInTextFont = UIFont(name: "HelveticaNeue-Light", size: 18)!
     }
     
     var fadeInNumberOfLayers: Int!
@@ -52,7 +57,7 @@ class LazyFadeInLayer: CATextLayer, LazyFadeIn {
             self.updateAnimating()
         }
     }
-    
+
     var fadeInTextColor: UIColor?
     var textColor: UIColor {
         get {
@@ -131,6 +136,8 @@ class LazyFadeInLayer: CATextLayer, LazyFadeIn {
         isAnimating = false
         self.string = self.animatingAttributedString
         self.displayLink.invalidate()
+        
+        self.soureView?.performSelector(Selector("lazyFadeInLayerAnimationDidEnd"))
     }
     
     func updateUI() {

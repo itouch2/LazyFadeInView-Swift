@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LazyFadeInViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,12 +17,17 @@ class ViewController: UIViewController {
         self.lazyFadeInView = LazyFadeInView.init(frame: CGRectMake(20, 100, UIScreen.mainScreen().bounds.size.width - 40, 200))
         self.lazyFadeInView?.textColor = UIColor.blackColor()
         self.lazyFadeInView?.text = strayBirds
+        self.lazyFadeInView?.delegate = self
         self.view.addSubview(lazyFadeInView!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fadeInAnimationDidEnd(fadeInView: LazyFadeInView) {
+        print("fade in animation did end")
     }
     
     @IBAction func textToggled(sender: AnyObject) {

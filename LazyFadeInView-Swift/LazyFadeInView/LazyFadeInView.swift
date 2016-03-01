@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol LazyFadeInViewDelegate {
-    
+protocol LazyFadeInViewDelegate: class {
+    func fadeInAnimationDidEnd(fadeInView: LazyFadeInView);
 }
 
 class LazyFadeInView: UIView, LazyFadeIn {
@@ -26,6 +26,16 @@ class LazyFadeInView: UIView, LazyFadeIn {
     
     override class func layerClass() -> AnyClass {
         return LazyFadeInLayer.self
+    }
+    
+    func commonInit() {
+        self.backgroundColor = UIColor.clearColor()
+        self.layer.contentsScale = UIScreen.mainScreen().scale
+        (self.layer as! LazyFadeInLayer).soureView = self
+    }
+    
+    func lazyFadeInLayerAnimationDidEnd() {
+        self.delegate?.fadeInAnimationDidEnd(self)
     }
     
     var numberOfLayers: Int {
@@ -82,8 +92,5 @@ class LazyFadeInView: UIView, LazyFadeIn {
         }
     }
     
-    func commonInit() {
-        self.backgroundColor = UIColor.clearColor()
-        self.layer.contentsScale = UIScreen.mainScreen().scale
-    }
+    weak var delegate: LazyFadeInViewDelegate?
 }
